@@ -1,0 +1,41 @@
+{
+  "name": "@cheprasov/ts-getflat",
+  "version": "1.0.0",
+  "author": "Alexander Cheprasov",
+  "description": "",
+  "keywords": [],
+  "main": "dist/index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cheprasov/ts-getflat"
+  },
+  "dependencies": {
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.1",
+    "@types/react-dom": "^16.8.5",
+    "@typescript-eslint/eslint-plugin": "^1.13.0",
+    "@typescript-eslint/parser": "^1.13.0",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb": "^18.0.0",
+    "eslint-config-react": "^1.1.7",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.5.3",
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2"
+  },
+  "scripts": {
+    "build:prod": "webpack --mode production",
+    "build": "webpack --mode development",
+    "build:watch": "webpack --watch --mode development",
+    "flow": "flow",
+    "eslint": "node ./node_modules/.bin/eslint ./app/src/",
+    "test": "jest"
+  }
+}
