@@ -1,31 +1,28 @@
-// eslint-disable-next-line
 const path = require('path');
 
 module.exports = {
-    entry: './src/index.tsx',
+    entry: {
+        'index.js': './src/index.ts',
+    },
     output: {
-        filename: 'app.js',
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'dist/'),
+        filename: '[name]',
+        libraryTarget: 'commonjs2',
+    },
+    resolve: {
+        extensions: ['.tsx', '.ts', '.js'],
+        alias: {
+            // '/SRC': path.resolve(__dirname, 'src/'),
+        },
     },
     module: {
         rules: [
             {
-                test: /\.scss$/,
-                use: [
-                    'style-loader', // creates style nodes from JS strings
-                    'css-loader', // translates CSS into CommonJS
-                    // { loader: path.resolve(__dirname, './scripts/minifycss.js') },
-                    'sass-loader', // compiles Sass to CSS, using Node Sass by default,
-                ],
-            },
-            {
-                test: /\.tsx?$/,
+                test: /\.ts$/,
                 use: 'ts-loader',
                 exclude: /node_modules/,
             },
         ],
     },
-    resolve: {
-        extensions: ['.tsx', '.ts', '.js'],
-    },
+    optimization: {},
 };
